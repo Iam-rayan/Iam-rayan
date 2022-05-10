@@ -1,7 +1,7 @@
 
 
 from tkinter import *
-import python-nmap
+import nmap
 import os
 
 
@@ -10,11 +10,25 @@ import os
 global sc
 sc = nmap.PortScanner()
 
-def nmap():
-    sc.scan(input_ip, '1-6')
-    if scan_port:
-        sc
+#def nmap():
+#    sc.scan(input_ip, '1-6')
+#    if scan_port:
+#        sc
 
+def all_port():
+    sc.scan(input_ip, '1-1000')
+    ## affichage des résultats en direct
+    for host in sc.all_hosts():
+        print('Host : %s (%s)' % (host, sc[host].hostname()))
+        print('State : %s' % sc[host].state())
+    for proto in sc[host].all_protocols():
+        print('----------')
+        print('Protocol : %s' % proto)
+ 
+         lport = sc[host][proto].keys()
+         for port in lport:
+             print('port : %s\tstate : %s' % (port, sc[host][proto][port]['state']))
+#scan_port()
 
 
 
