@@ -25,10 +25,10 @@ def all_port():
         print('----------')
         print('Protocol : %s' % proto)
  
-         lport = sc[host][proto].keys()
-         for port in lport:
-             print('port : %s\tstate : %s' % (port, sc[host][proto][port]['state']))
-#scan_port()
+        lport = sc[host][proto].keys()
+        for port in lport:
+            print('port : %s\tstate : %s' % (port, sc[host][proto][port]['state']))
+#all_port()
 
 
 
