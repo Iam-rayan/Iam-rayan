@@ -1,7 +1,7 @@
 
 
 from tkinter import *
-import nmap
+import python-nmap
 import os
 
 
